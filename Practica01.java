@@ -56,7 +56,6 @@ public class Practica01{
 				arrayTemp[j + valueOne] = arrayTwo[j]; //2
 		}
 
-
 		int numeroDePasos = 0;
 		long inicioPrueba = System.currentTimeMillis();
 
@@ -141,28 +140,6 @@ public class Practica01{
 		return true;
 	}
 
-	public static boolean rotateArraySolutionxd(int[] num, int valor){
-		int max = num [0];
-		int value;
-		boolean duplicate = false;
-		for (int i = 0; i < num.length; i++) {
-			if (num[i] > max) {
-				max = num[i];
-			}
-		}
-		int[] casillasDuplicadas = new int[max+1];
-
-		for (int i = 0; i<num.length;i++){
-			value = num[i];
-			casillasDuplicadas[value] = casillasDuplicadas[value]+1;
-			if(casillasDuplicadas[value]>1 || num[i]>num.length){ // La cifra no puede ser mayor al largo de nuestro arreglo
-				duplicate = true;
-				break;
-			}
-		}
-		return duplicate;
-	}
-
 	/**
 	 * Verifica si un tablero contiene los números desde 0 hasta n-1 en cada fila y cada columna.
 	 * @param board el tablero de nxn que contiene elementos dentro del rango [0, n-1].
@@ -198,6 +175,30 @@ public class Practica01{
 			}
 		}
 		return true;
+	}
+
+	public static boolean isValidBoardSolution(int[] num){
+		int max = num [0];
+		int value;
+		boolean duplicate = false;
+		for (int i = 0; i < num.length; i++) {
+			if (num[i] > max) {
+				max = num[i];
+			}
+		}
+		int[] casillasDuplicadas = new int[max+1];
+
+		for (int i = 0; i<num.length;i++){
+			value = num[i];
+			casillasDuplicadas[value] = casillasDuplicadas[value]+1;
+			if(casillasDuplicadas[value]>1 || num[i]>num.length){ // La cifra no puede ser mayor al largo de nuestro arreglo
+				duplicate = true;
+				break;
+			}
+		}
+
+
+		return duplicate;
 	}
 
 	/**
@@ -246,6 +247,10 @@ public class Practica01{
 		String directorio1 = "Examples/ArrayExamples/";
 		String directorio2 = "Examples/BoardExamples/";
 
+		int[] arrayPrueba = {1,2,3,4,5,6,7,8,9,10,5};
+		int[][] arrayBiPrueba = {{1,2,3},{4,5,6},{7,8,9}};
+
+
 		// Arreglos para los algoritmos de Manuel
 		int[] arrayA1 = ArrayReader.readArray(directorio1 + "ArrayA1.txt");
 		int[] arrayA2 = ArrayReader.readArray(directorio1 + "ArrayA2.txt");
@@ -261,6 +266,19 @@ public class Practica01{
 		int[] arrayB22 = ArrayReader.readArray(directorio1 + "ArrayB2.txt");
 		int[] arrayC11 = ArrayReader.readArray(directorio1 + "ArrayC1.txt");
 		int[] arrayC22 = ArrayReader.readArray(directorio1 + "ArrayC2.txt");
+
+		// Arreglos bidimensionales para los algoritmos de Manuel
+		int[][] boardA = ArrayReader.readMatrix(directorio2 + "BoardA.txt");
+		int[][] boardB = ArrayReader.readMatrix(directorio2 + "BoardB.txt");
+		int[][] boardC = ArrayReader.readMatrix(directorio2 + "BoardC.txt");
+		int[][] boardD = ArrayReader.readMatrix(directorio2 + "BoardD.txt");
+
+		// Arreglos bidimensionales para los algoritmos de Manuel
+		int[][] boardAA = ArrayReader.readMatrix(directorio2 + "BoardA.txt");
+		int[][] boardBB = ArrayReader.readMatrix(directorio2 + "BoardB.txt");
+		int[][] boardCC = ArrayReader.readMatrix(directorio2 + "BoardC.txt");
+		int[][] boardDD = ArrayReader.readMatrix(directorio2 + "BoardD.txt");
+
 
 		System.out.println("\nEjemplos de actividad uno con el código de Manuel\n");
 			inicio = System.currentTimeMillis();
@@ -282,34 +300,50 @@ public class Practica01{
 			//System.out.println("Resultado C: "+Arrays.toString(resultC));
 
 		System.out.println("\nEjemplos de actividad dos con el código de Manuel\n");
-			int[][] boardA = ArrayReader.readMatrix(directorio2 + "BoardA.txt");
+
 			inicio = System.currentTimeMillis();
 			boolean boardResultA = isValidBoard(boardA);
 			fin = System.currentTimeMillis();
 			System.out.println("El boardA con el código de Manuel: "+ (fin - inicio) + " milisegundos.");
 			//System.out.println("El tablero A con el algoritmo de Manuel es válido: "+boardResultA);
 
-			int[][] boardB = ArrayReader.readMatrix(directorio2 + "BoardB.txt");
+
 			inicio = System.currentTimeMillis();
 			boolean boardResultB = isValidBoard(boardB);
 			fin = System.currentTimeMillis();
 			System.out.println("El boardB con el código de Manuel: "+ (fin - inicio) + " milisegundos.");
 			//System.out.println("El tablero B con el algoritmo de Manuel es válido: "+boardResultB);
 
-			int[][] boardC = ArrayReader.readMatrix(directorio2 + "BoardC.txt");
+
 			inicio = System.currentTimeMillis();
 			boolean boardResultC = isValidBoard(boardC);
 			fin = System.currentTimeMillis();
 			System.out.println("El boardC con el código de Manuel: "+ (fin - inicio) + " milisegundos.");
 			//System.out.println("El tablero C con el algoritmo de Manuel es válido: "+boardResultC);
 
-			int[][] boardD = ArrayReader.readMatrix(directorio2 + "BoardD.txt");
 			inicio = System.currentTimeMillis();
 			boolean boardResultD = isValidBoard(boardD);
 			fin = System.currentTimeMillis();
 			System.out.println("El boardD con el código de Manuel: "+ (fin - inicio) + " milisegundos.");
 			//System.out.println("El tablero D con el algoritmo de Manuel es válido: "+boardResultD);
-		
+
+		System.out.println("\nEjemplos de actividad dos con nuestro codgio\n");
+
+			System.out.println("El arreglo de prueba se ve: "+Arrays.toString(arrayPrueba));
+			inicio = System.currentTimeMillis();
+			boolean pureba = isValidBoardSolution(arrayPrueba);
+			fin = System.currentTimeMillis();
+			System.out.println("El piloto del código dos tarda: "+ (fin - inicio) + " milisegundos.");
+			if(pureba==true){
+				System.out.println("Hay elementos duplicados en el arreglo");
+			}else{
+				System.out.println("No hay elementos duplicados en el arreglo");
+			}
+			//System.out.println("El resultado del codigo dos es: "+pureba); // duplicado debe ser verdadero
+
+
+
+
 		System.out.println("\nEjemplos de actividad tres con el código de Manuel\n");
 			inicio = System.currentTimeMillis();
 			rotateArray(arrayA1, 200);
