@@ -42,7 +42,6 @@ public class Practica01{
 		return result;
 	}
 
-	// Ejercicio Uno: posible solución
 	public static int[] mergeSortedArraySolution(int[]arrayOne, int valueOne, int[]arrayTwo, int valueTwo){
 		int size = valueOne+valueTwo; //5
 		int[] arrayTemp = new int[size];//3
@@ -105,12 +104,6 @@ public class Practica01{
 		return arrayTemp;
 	}
 
-
-
-
-
-
-
     /**
     * Verifica si un tablero contiene los números desde 0 hasta n-1 en cada fila y cada columna.
     * @param board el tablero de nxn que contiene elementos dentro del rango [0, n-1].
@@ -148,7 +141,6 @@ public class Practica01{
 		return true;
 	}
 
-
 	public static boolean rotateArraySolutionxd(int[] num, int valor){
 		int max = num [0];
 		int value;
@@ -171,8 +163,43 @@ public class Practica01{
 		return duplicate;
 	}
 
+	/**
+	 * Verifica si un tablero contiene los números desde 0 hasta n-1 en cada fila y cada columna.
+	 * @param board el tablero de nxn que contiene elementos dentro del rango [0, n-1].
+	 * @return true si el tablero contiene los números desde 0 hasta n-1 en cada fila y columna,
+	 * false en otro caso.
+	 */
+	public static boolean isValidBoard(int[][] board){
+		int length = board.length;
+		for (int i = 0; i < length ; i++) {
+			for (int j = 0; j < length ; j++ ) {
+				boolean verificador = false;
+				// Verifica sobre las filas
+				for(int k = 0 ; k < length; k++){
+					if(board[i][k] == j){
+						verificador = true;
+						break;
+					}
+				}
+				if(!verificador){
+					return false;
+				}
+				verificador = false;
+				// Verifica sobre las columnas
+				for(int k = 0 ; k < length; k++){
+					if(board[k][i] == j){
+						verificador = true;
+						break;
+					}
+				}
+				if(!verificador){
+					return false;
+				}
+			}
+		}
+		return true;
+	}
 
-	
 	/**
 	* Rota position cantidad de veces los elementos de un arreglo
 	* hacia el vecino izquierdo.
@@ -254,6 +281,35 @@ public class Practica01{
 			System.out.println("El arrayC1 con el código de Manuel: "+ (fin - inicio) + " milisegundos.");
 			//System.out.println("Resultado C: "+Arrays.toString(resultC));
 
+		System.out.println("\nEjemplos de actividad dos con el código de Manuel\n");
+			int[][] boardA = ArrayReader.readMatrix(directorio2 + "BoardA.txt");
+			inicio = System.currentTimeMillis();
+			boolean boardResultA = isValidBoard(boardA);
+			fin = System.currentTimeMillis();
+			System.out.println("El boardA con el código de Manuel: "+ (fin - inicio) + " milisegundos.");
+			//System.out.println("El tablero A con el algoritmo de Manuel es válido: "+boardResultA);
+
+			int[][] boardB = ArrayReader.readMatrix(directorio2 + "BoardB.txt");
+			inicio = System.currentTimeMillis();
+			boolean boardResultB = isValidBoard(boardB);
+			fin = System.currentTimeMillis();
+			System.out.println("El boardB con el código de Manuel: "+ (fin - inicio) + " milisegundos.");
+			//System.out.println("El tablero B con el algoritmo de Manuel es válido: "+boardResultB);
+
+			int[][] boardC = ArrayReader.readMatrix(directorio2 + "BoardC.txt");
+			inicio = System.currentTimeMillis();
+			boolean boardResultC = isValidBoard(boardC);
+			fin = System.currentTimeMillis();
+			System.out.println("El boardC con el código de Manuel: "+ (fin - inicio) + " milisegundos.");
+			//System.out.println("El tablero C con el algoritmo de Manuel es válido: "+boardResultC);
+
+			int[][] boardD = ArrayReader.readMatrix(directorio2 + "BoardD.txt");
+			inicio = System.currentTimeMillis();
+			boolean boardResultD = isValidBoard(boardD);
+			fin = System.currentTimeMillis();
+			System.out.println("El boardD con el código de Manuel: "+ (fin - inicio) + " milisegundos.");
+			//System.out.println("El tablero D con el algoritmo de Manuel es válido: "+boardResultD);
+		
 		System.out.println("\nEjemplos de actividad tres con el código de Manuel\n");
 			inicio = System.currentTimeMillis();
 			rotateArray(arrayA1, 200);
