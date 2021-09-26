@@ -1,7 +1,7 @@
 public class Ola {
     public static void main(String[] args) {
 
-        int[] arrayA1 = ArrayReader.readArray(directorio1 + "ArrayA1.txt");
+       /** int[] arrayA1 = ArrayReader.readArray(directorio1 + "ArrayA1.txt");
         System.out.println("Longitud de arraya1 es: "+arrayA1.length);
         int[] arrayA2 = ArrayReader.readArray(directorio1 + "ArrayA2.txt");
         System.out.println("Longitud de arrayaa2 es: "+arrayA2.length);
@@ -17,11 +17,7 @@ public class Ola {
                     arrayTemp[j] = aux;
                 }
             }
-        }
-
-
-
-
+        }*/
 
     }
 }

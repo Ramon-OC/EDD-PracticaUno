@@ -172,19 +172,7 @@ public class Practica01{
 	}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+	
 	/**
 	* Rota position cantidad de veces los elementos de un arreglo
 	* hacia el vecino izquierdo.
@@ -201,6 +189,12 @@ public class Practica01{
 		}
 	}
 
+	/**
+	 * Rota position cantidad de veces los elementos de un arreglo
+	 * hacia el vecino izquierdo.
+	 * @param arr el arreglo de enteros a rotar.
+	 * @param lugares la cantidad de espacios a rotar.
+	 */
 	public static void rotateArraySolution(int[] arr, int lugares){
 		int[] temp = new int[arr.length];
 		int posicionNuevo;
@@ -212,35 +206,20 @@ public class Practica01{
 				temp[posicionNuevo] = arr[i];
 			}
 		}
-
-		//System.arraycopy(temp,0,arr,0,arr.length);
+		// Copia el arreglo temporal en el orginal
 		for(int i = 0; i < arr.length ; i++) {
 			arr[i] = temp[i];
 		}
-
 	}
-
-
-
 
 
 	public static void main(String[] args) {
 
-		long inicio,fin;
+		long inicio,fin; // Variables para medir el tiempo
 		String directorio1 = "Examples/ArrayExamples/";
 		String directorio2 = "Examples/BoardExamples/";
 
-
-
-
-
-
-
-
-
-
-
-		// Arreglos de prueba para el ejercicio tres con el algoritmo de Manuel
+		// Arreglos para los algoritmos de Manuel
 		int[] arrayA1 = ArrayReader.readArray(directorio1 + "ArrayA1.txt");
 		int[] arrayA2 = ArrayReader.readArray(directorio1 + "ArrayA2.txt");
 		int[] arrayB1 = ArrayReader.readArray(directorio1 + "ArrayB1.txt");
@@ -248,17 +227,13 @@ public class Practica01{
 		int[] arrayC1 = ArrayReader.readArray(directorio1 + "ArrayC1.txt");
 		int[] arrayC2 = ArrayReader.readArray(directorio1 + "ArrayC2.txt");
 
-		// Arreglos de prueba para el ejercicio tres con nuestro algoritmo
+		// Arreglos para nuestros algoritmos
 		int[] arrayA11 = ArrayReader.readArray(directorio1 + "ArrayA1.txt");
 		int[] arrayA22 = ArrayReader.readArray(directorio1 + "ArrayA2.txt");
 		int[] arrayB11 = ArrayReader.readArray(directorio1 + "ArrayB1.txt");
 		int[] arrayB22 = ArrayReader.readArray(directorio1 + "ArrayB2.txt");
 		int[] arrayC11 = ArrayReader.readArray(directorio1 + "ArrayC1.txt");
 		int[] arrayC22 = ArrayReader.readArray(directorio1 + "ArrayC2.txt");
-
-
-
-
 
 		System.out.println("\nEjemplos de actividad uno con el código de Manuel\n");
 			inicio = System.currentTimeMillis();
@@ -278,12 +253,6 @@ public class Practica01{
 			fin = System.currentTimeMillis();
 			System.out.println("El arrayC1 con el código de Manuel: "+ (fin - inicio) + " milisegundos.");
 			//System.out.println("Resultado C: "+Arrays.toString(resultC));
-
-
-
-
-
-
 
 		System.out.println("\nEjemplos de actividad tres con el código de Manuel\n");
 			inicio = System.currentTimeMillis();
