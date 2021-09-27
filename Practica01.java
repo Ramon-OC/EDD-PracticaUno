@@ -251,7 +251,7 @@ public class Practica01{
 		int[][] arrayBiPrueba = {{1,2,3},{4,5,6},{7,8,9}};
 
 
-		// Arreglos para los algoritmos de Manuel
+		// Arreglos para los algoritmos de Emmanuel
 		int[] arrayA1 = ArrayReader.readArray(directorio1 + "ArrayA1.txt");
 		int[] arrayA2 = ArrayReader.readArray(directorio1 + "ArrayA2.txt");
 		int[] arrayB1 = ArrayReader.readArray(directorio1 + "ArrayB1.txt");
@@ -267,13 +267,13 @@ public class Practica01{
 		int[] arrayC11 = ArrayReader.readArray(directorio1 + "ArrayC1.txt");
 		int[] arrayC22 = ArrayReader.readArray(directorio1 + "ArrayC2.txt");
 
-		// Arreglos bidimensionales para los algoritmos de Manuel
+		// Arreglos bidimensionales para los algoritmos de Emmanuel
 		int[][] boardA = ArrayReader.readMatrix(directorio2 + "BoardA.txt");
 		int[][] boardB = ArrayReader.readMatrix(directorio2 + "BoardB.txt");
 		int[][] boardC = ArrayReader.readMatrix(directorio2 + "BoardC.txt");
 		int[][] boardD = ArrayReader.readMatrix(directorio2 + "BoardD.txt");
 
-		// Arreglos bidimensionales para los algoritmos de Manuel
+		// Arreglos bidimensionales para los algoritmos de Emmanuel
 		int[][] boardAA = ArrayReader.readMatrix(directorio2 + "BoardA.txt");
 		int[][] boardBB = ArrayReader.readMatrix(directorio2 + "BoardB.txt");
 		int[][] boardCC = ArrayReader.readMatrix(directorio2 + "BoardC.txt");
