@@ -9,6 +9,9 @@ import java.util.Arrays;
 */
 public class Practica01{
 
+
+//EJERCICIO 1
+
 	/** 
 	* Hace la mezcla de dos arreglos ordenados desde la primera posición hasta
 	* una posición límite
@@ -43,6 +46,15 @@ public class Practica01{
 		return result;
 	}
 
+	/** 
+	* Hace la mezcla de dos arreglos ordenados desde la primera posición hasta
+	* una posición límite
+	* @param array1 el primer arreglo a mezlar
+	* @param valueOne el límite de mezcla del primer arreglo
+	* @param array2 el segundo arreglo a mezclar
+	* @param valueTwo el límite de mezcla del segundo arreglo.
+	* @return un arreglo ordenado de longitud m+n con la mezcla definida.
+	*/
 	public static int[] mergeSortedArraySolution(int[]arrayOne, int valueOne, int[]arrayTwo, int valueTwo){
 		int size = valueOne+valueTwo; //5
 		int[] arrayTemp = new int[size];//3
@@ -97,50 +109,14 @@ public class Practica01{
 		}*/
 
 
-
-
-
-
 		return arrayTemp;
 	}
 
-    /**
-    * Verifica si un tablero contiene los números desde 0 hasta n-1 en cada fila y cada columna.
-    * @param board el tablero de nxn que contiene elementos dentro del rango [0, n-1].
-    * @return true si el tablero contiene los números desde 0 hasta n-1 en cada fila y columna,
-	* false en otro caso.
-    */
-    public static boolean mergeSortedArraySolution(int[][] board){
-    	int length = board.length;
-		for (int i = 0; i < length ; i++) {
-			for (int j = 0; j < length ; j++ ) {
-				boolean verificador = false;
-				// Verifica sobre las filas
-				for(int k = 0 ; k < length; k++){
-					if(board[i][k] == j){
-						verificador = true;
-						break;
-					}
-				}
-				if(!verificador){
-					return false;
-				}
-				verificador = false;
-				// Verifica sobre las columnas
-				for(int k = 0 ; k < length; k++){
-					if(board[k][i] == j){
-						verificador = true;
-						break;
-					}
-				}
-				if(!verificador){
-					return false;
-				}
-			}
-		}
-		return true;
-	}
 
+
+//EJERCICIO 2
+
+    
 	/**
 	 * Verifica si un tablero contiene los números desde 0 hasta n-1 en cada fila y cada columna.
 	 * @param board el tablero de nxn que contiene elementos dentro del rango [0, n-1].
@@ -178,10 +154,55 @@ public class Practica01{
 		return true;
 	}
 
-	public static boolean isValidBoardSolution(int[] num){
-		int max = num [0];
+
+	/**
+	 * Verifica si un tablero contiene los números desde 0 hasta n-1 en cada fila y cada columna.
+	 * @param board el tablero de nxn que contiene elementos dentro del rango [0, n-1].
+	 * @return true si el tablero contiene los números desde 0 hasta n-1 en cada fila y columna,
+	 * false en otro caso.
+	 */
+	public static boolean isValidBoardSolution(int[][] num){
+		
+		//Prosible solucion
+		boolean duplicate = false;
+		int[] columnaTemp = new int[num[0].length+1]; 
+		int[] lineaTemp = new int[num[0].length+1];
+
+		for(int i=0; i<num.length;i++ ){
+
+			for(int j=0; j<num[0].length;j++){		//Revisa linea por linea si hay elementos repetidos		
+				if(num[i][j]<=num[0].length){	//Verifica que la cifra sea menor o igual al largo de la tabla
+					lineaTemp[num[i][j]]++;
+				}else{
+					System.out.println("Si la cifra es mayor que el largo del arreglo, entonces mandar un Error");//Recordatorio
+				}
+				if(lineaTemp[num[j][i]]>1){
+					return true;
+				}
+			}				
+			lineaTemp=new int[num[0].length+1];
+
+
+			for(int j=0; j<num.length;j++){			//Revisa columna por columna si hay elementos repetidos		
+				if(num[j][i]<=num.length){ 			//Verifica que la cifra sea menor o igual al largo de la tabla
+					columnaTemp[num[j][i]]++;
+				}else{
+					System.out.println("Si la cifra es mayor que el largo del arreglo, entonces mandar un Error");//Recordatorio
+				}
+				if(columnaTemp[num[j][i]]>1){
+					return true;
+				}			
+			}
+			columnaTemp=new int[num.length+1];				
+		}
+
+		return duplicate;
+
+		/*int max = num [0];
 		int value;
 		boolean duplicate = false;
+
+
 		for (int i = 0; i < num.length; i++) {
 			if (num[i] > max) {
 				max = num[i];
@@ -196,11 +217,12 @@ public class Practica01{
 				duplicate = true;
 				break;
 			}
-		}
-
-
-		return duplicate;
+		}*/		
 	}
+
+
+	//EJERCICIO 3
+
 
 	/**
 	* Rota position cantidad de veces los elementos de un arreglo
@@ -227,6 +249,7 @@ public class Practica01{
 	public static void rotateArraySolution(int[] arr, int lugares){
 		int[] temp = new int[arr.length];
 		int posicionNuevo;
+
 		for(int i = 0; i < arr.length ; i++){
 			posicionNuevo = i-lugares;
 			if(posicionNuevo<0){
@@ -245,11 +268,11 @@ public class Practica01{
 	public static void main(String[] args) {
 
 		long inicio,fin; // Variables para medir el tiempo
-		String directorio1 = "Examples/ArrayExamples/";
-		String directorio2 = "Examples/BoardExamples/";
+		String directorio1 = "src/fciencias/edatos/practica01/Examples/ArrayExamples/";
+		String directorio2 = "src/fciencias/edatos/practica01/Examples/BoardExamples/";
 
-		int[] arrayPrueba = {1,2,3,4,5,6,7,8,9,10,5};
-		int[][] arrayBiPrueba = {{1,2,3},{4,5,6},{7,8,9}};
+		int[] arrayPrueba = {1,2,3,4,5,6,7,8,9,10};
+		int[][] arrayBiPrueba = {{1,2,3},{3,1,2},{2,1,3}};
 
 
 		// Arreglos para los algoritmos de Emmanuel
@@ -281,61 +304,63 @@ public class Practica01{
 		int[][] boardDD = ArrayReader.readMatrix(directorio2 + "BoardD.txt");
 
 
-		System.out.println("\nEjemplos de actividad uno con el código de Manuel\n");
+		System.out.println("\nEjemplos de actividad uno con el código de Emmanuel\n");
 			inicio = System.currentTimeMillis();
 			int[] resultA = mergeSortedArray(arrayA1, 500, arrayA2, 500);
 			fin = System.currentTimeMillis();
-			System.out.println("El arrayA1 con el código de Manuel: "+ (fin - inicio) + " milisegundos.");
+			System.out.println("El arrayA1 con el código de Emmanuel: "+ (fin - inicio) + " milisegundos.");
 			//System.out.println("Resultado A: "+Arrays.toString(resultA));
 
 			inicio = System.currentTimeMillis();
 			int[] resultB = mergeSortedArray(arrayB1, 500, arrayB2, 500);
 			fin = System.currentTimeMillis();
-			System.out.println("El arrayB1 con el código de Manuel: "+ (fin - inicio) + " milisegundos.");
+			System.out.println("El arrayB1 con el código de Emmanuel: "+ (fin - inicio) + " milisegundos.");
 			//System.out.println("Resultado B: "+Arrays.toString(resultB));
 
 			inicio = System.currentTimeMillis();
 			int[] resultC = mergeSortedArray(arrayC1, 500, arrayC2, 500);
 			fin = System.currentTimeMillis();
-			System.out.println("El arrayC1 con el código de Manuel: "+ (fin - inicio) + " milisegundos.");
+			System.out.println("El arrayC1 con el código de Emmanuel: "+ (fin - inicio) + " milisegundos.");
 			//System.out.println("Resultado C: "+Arrays.toString(resultC));
 
-		System.out.println("\nEjemplos de actividad dos con el código de Manuel\n");
+		System.out.println("\nEjemplos de actividad dos con el código de Emmanuel\n");
 
 			inicio = System.currentTimeMillis();
 			boolean boardResultA = isValidBoard(boardA);
 			fin = System.currentTimeMillis();
-			System.out.println("El boardA con el código de Manuel: "+ (fin - inicio) + " milisegundos.");
-			//System.out.println("El tablero A con el algoritmo de Manuel es válido: "+boardResultA);
+			System.out.println("El boardA con el código de Emmanuel: "+ (fin - inicio) + " milisegundos.");
+			//System.out.println("El tablero A con el algoritmo de Emmanuel es válido: "+boardResultA);
 
 
 			inicio = System.currentTimeMillis();
 			boolean boardResultB = isValidBoard(boardB);
 			fin = System.currentTimeMillis();
-			System.out.println("El boardB con el código de Manuel: "+ (fin - inicio) + " milisegundos.");
-			//System.out.println("El tablero B con el algoritmo de Manuel es válido: "+boardResultB);
+			System.out.println("El boardB con el código de Emmanuel: "+ (fin - inicio) + " milisegundos.");
+			//System.out.println("El tablero B con el algoritmo de Emmanuel es válido: "+boardResultB);
 
 
 			inicio = System.currentTimeMillis();
 			boolean boardResultC = isValidBoard(boardC);
 			fin = System.currentTimeMillis();
-			System.out.println("El boardC con el código de Manuel: "+ (fin - inicio) + " milisegundos.");
-			//System.out.println("El tablero C con el algoritmo de Manuel es válido: "+boardResultC);
+			System.out.println("El boardC con el código de Emmanuel: "+ (fin - inicio) + " milisegundos.");
+			//System.out.println("El tablero C con el algoritmo de Emmanuel es válido: "+boardResultC);
 
 			inicio = System.currentTimeMillis();
 			boolean boardResultD = isValidBoard(boardD);
 			fin = System.currentTimeMillis();
-			System.out.println("El boardD con el código de Manuel: "+ (fin - inicio) + " milisegundos.");
-			//System.out.println("El tablero D con el algoritmo de Manuel es válido: "+boardResultD);
+			System.out.println("El boardD con el código de Emmanuel: "+ (fin - inicio) + " milisegundos.");
+			//System.out.println("El tablero D con el algoritmo de Emmanuel es válido: "+boardResultD);
 
-		System.out.println("\nEjemplos de actividad dos con nuestro codgio\n");
+		System.out.println("\nEjemplos de actividad dos con nuestro codigo\n");
+			System.out.println("El tablero de prueba se ve:\n ");
+			auxMostrarMatriz(boardA);//hize un metodo auxiliar abajo de main para imprimir las tablas BORRAR ESTO
 
-			System.out.println("El arreglo de prueba se ve: "+Arrays.toString(arrayPrueba));
 			inicio = System.currentTimeMillis();
-			boolean pureba = isValidBoardSolution(arrayPrueba);
+			boolean prueba = isValidBoardSolution(boardA);
 			fin = System.currentTimeMillis();
+
 			System.out.println("El piloto del código dos tarda: "+ (fin - inicio) + " milisegundos.");
-			if(pureba==true){
+			if(prueba==true){
 				System.out.println("Hay elementos duplicados en el arreglo");
 			}else{
 				System.out.println("No hay elementos duplicados en el arreglo");
@@ -345,26 +370,28 @@ public class Practica01{
 
 
 
-		System.out.println("\nEjemplos de actividad tres con el código de Manuel\n");
+		System.out.println("\nEjemplos de actividad tres con el código de Emmanuel\n");
 			inicio = System.currentTimeMillis();
 			rotateArray(arrayA1, 200);
 			fin = System.currentTimeMillis();
-			System.out.println("El arrayA1 con el código de Manuel: "+ (fin - inicio) + " milisegundos.");
+			System.out.println("El arrayA1 con el código de Emmanuel: "+ (fin - inicio) + " milisegundos.");
 			//System.out.println("Arreglo A1 rotado 200 veces: " + Arrays.toString(arrayA11));
 
 			inicio = System.currentTimeMillis();
 			rotateArray(arrayB1, 200);
 			fin = System.currentTimeMillis();
-			System.out.println("El arrayB1 con el código de Manuel: "+ (fin - inicio) + " milisegundos.");
+			System.out.println("El arrayB1 con el código de Emmanuel: "+ (fin - inicio) + " milisegundos.");
 			//System.out.println("Arreglo B1 rotado 200 veces: " + Arrays.toString(arrayA11));
 
 			inicio = System.currentTimeMillis();
 			rotateArray(arrayC1, 200);
 			fin = System.currentTimeMillis();
-			System.out.println("El arrayC1 con el código de Manuel: "+ (fin - inicio) + " milisegundos.");
+			System.out.println("El arrayC1 con el código de Emmanuel: "+ (fin - inicio) + " milisegundos.");
 			//System.out.println("Arreglo C1 rotado 200 veces: " + Arrays.toString(arrayA11));
 
+
 		System.out.println("\nEjemplos de actividad tres con nuestro código\n");
+
 			inicio = System.currentTimeMillis();
 			rotateArraySolution(arrayA11, 200);
 			fin = System.currentTimeMillis();
@@ -385,4 +412,28 @@ public class Practica01{
 
 
 	}
+
+	/**
+	 * Imprime en pantalla una matriz de nxn.
+	 * @param matriz la matriz de nxn 
+	 */
+
+	//Método auxiliar solo para probar los métodos de los ejercicios, eliminar despues de terminar las pruebas.
+
+	public static void auxMostrarMatriz(int[][] matriz){ 
+
+		for(int i=0; i<matriz.length;i++ ){
+
+			for(int j=0; j<matriz[0].length;j++){
+
+				System.out.print(matriz[i][j]+" ");
+
+			}
+			System.out.print("\n");
+		}
+	}
+
+
+
+
 }
