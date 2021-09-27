@@ -6,7 +6,7 @@ Contiene los siguientes comandos:
 * jar - Compila el código fuente *.java y empaqueta los resultados en un archivo
 	ejecutable *.jar
 * doc - Crea el Javadoc del proyecto.
-* Author: Emmanuel Cruz Hernández.
+* Author: Pedro Joshue Pintor Muñoz y José Ramón Ortiz Castañeda
 * Version: Septiembre 2021. -->
 
 <project>
@@ -27,24 +27,24 @@ Contiene los siguientes comandos:
   <target name="jar" >
     <antcall target="build" />
     <mkdir dir="build/jar" />
-    <jar destfile="build/jar/HelloWord.jar" basedir="build/classes" >
+    <jar destfile="build/jar/Practica01.jar" basedir="build/classes" >
       <manifest >
 	<attribute name="DependencyFinder" value="main" />
-	<attribute name="Main-Class" value="fciencias.edatos.helloWorld.HelloWorld" />
+	<attribute name="Main-Class" value="fciencias.edatos.practica01.Practica01" />
       </manifest >
     </jar >
   </target>
 
   <!-- Ejecuta el proyecto -->
   <target name="run" >
-    <java jar="build/jar/HelloWord.jar" fork="true" >
+    <java jar="build/jar/Practica01.jar" fork="true" >
     </java>
   </target >
 
   <!-- Genera la documentacion -->
   <target name="doc" >
     <mkdir dir="doc" />
-    <javadoc sourcepath="src" destdir="doc" access="private" windowtitle="HelloWord" doctitle="HelloWord" author="true" version="true" >
+    <javadoc sourcepath="src" destdir="doc" access="private" windowtitle="Practica01" doctitle="Practica01" author="true" version="true" >
       <classpath >
       </classpath >
     </javadoc>
