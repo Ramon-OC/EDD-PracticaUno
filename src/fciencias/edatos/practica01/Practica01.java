@@ -266,6 +266,7 @@ public class Practica01{
 
 
 	public static void main(String[] args) {
+		// Mensaje en main
 
 		long inicio,fin; // Variables para medir el tiempo
 		String directorio1 = "src/fciencias/edatos/practica01/Examples/ArrayExamples/";
