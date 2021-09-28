@@ -66,6 +66,12 @@ public class Practica01{
 			}else if(arrayTwo[dos]<arrayOne[uno] && dos <= valueTwo){
 			arrayTemp[i]=arrayTwo[dos];
 			dos++;
+			}else if(arrayTwo[dos]==arrayOne[uno]){
+				arrayTemp[i]=arrayOne[uno];
+				arrayTemp[i+1]=arrayTwo[dos];
+				i++;
+				dos++;
+				uno++;
 			}
 
 			System.out.println("En la posicion "+i+" El arreglo va: "+Arrays.toString(arrayTemp));
@@ -286,7 +292,7 @@ public class Practica01{
 
 		System.out.println("\nEjemplos de actividad uno con nuestro codigo\n");
 			int [] pruebaUno = {1,3,5,6,7};
-			int [] pruebaDos = {2,4,8,9};
+			int [] pruebaDos = {2,4,5,9};
 
 			System.out.println("Arreglo Uno: "+Arrays.toString(pruebaUno));
 			System.out.println("Arreglo Dos: "+Arrays.toString(pruebaDos));
