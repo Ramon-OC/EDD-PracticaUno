@@ -80,12 +80,13 @@ public class Practica01{
 			if(arrayOne[uno]<arrayTwo[dos] && uno <= valueOne){
 			arrayTemp[i]=arrayOne[uno];
 			uno++;
-
 			}
+
 			if(arrayTwo[dos]<arrayOne[uno] && dos <= valueTwo){
 			arrayTemp[i]=arrayTwo[dos];
 			dos++;
 			}
+
 		}
 
 		return arrayTemp;
@@ -249,7 +250,8 @@ public class Practica01{
 
 		int[] arrayPrueba = {1,2,3,4,5,6,7,8,9,10};
 		int[][] arrayBiPrueba = {{1,2,3},{3,1,2},{2,1,3}};
-		int arrayDesordenadoPrueba[] = { 12, 11, 13, 5, 6, 7 };
+
+		
 
 
 		// Arreglos para los algoritmos de Emmanuel
@@ -293,12 +295,21 @@ public class Practica01{
 			System.out.println("El arrayC1 con el código de Emmanuel: "+ (fin - inicio) + " milisegundos.");
 			//System.out.println("Resultado C: "+Arrays.toString(resultC));
 
-		System.out.println("\nEjemplos de actividad uno con nuestro código\n");
+			System.out.println("\nEjemplos de actividad uno con nuestro código\n");
 			inicio = System.currentTimeMillis();
 			//int[] pruebaDesorden = sort(arrayDesordenadoPrueba,0,arrayDesordenadoPrueba.length - 1);
 			fin = System.currentTimeMillis();
 			System.out.println("El arrayA1 con el código de Emmanuel: "+ (fin - inicio) + " milisegundos.");
 			//System.out.println("Resultado A: "+Arrays.toString(resultA));
+
+		System.out.println("\nEjemplos de actividad uno con nuestro codigo\n");
+			int [] pruebaUno = {1,3,5,6,7};
+			int [] pruebaDos = {2,4,8,9};
+			System.out.println("Arreglo Uno: "+Arrays.toString(pruebaUno));
+			System.out.println("Arreglo Dos: "+Arrays.toString(pruebaDos));
+			int[] resultadoPrueba = mergeArrayFinal(pruebaUno, 4, pruebaDos, 2);
+			System.out.println("Arreglo mixto: "+Arrays.toString(resultadoPrueba));
+			
 
 
 
