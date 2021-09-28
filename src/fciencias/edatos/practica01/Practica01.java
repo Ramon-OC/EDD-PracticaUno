@@ -112,6 +112,51 @@ public class Practica01{
 		return arrayTemp;
 	}
 
+	public static void sort(int arr[], int l, int r){
+		if (l < r) {
+			int m =l+ (r-l)/2;
+			sort(arr, l, m);
+			sort(arr, m + 1, r);
+
+
+				int n1 = m - l + 1;
+				int n2 = r - m;
+				int L[] = new int[n1];
+				int R[] = new int[n2];
+				for (int i = 0; i < n1; ++i)
+					L[i] = arr[l + i];
+				for (int j = 0; j < n2; ++j)
+					R[j] = arr[m + 1 + j];
+
+
+				int i = 0, j = 0;
+
+				int k = l;
+				while (i < n1 && j < n2) {
+					if (L[i] <= R[j]) {
+						arr[k] = L[i];
+						i++;
+					}
+					else {
+						arr[k] = R[j];
+						j++;
+					}
+					k++;
+				}
+
+				while (i < n1) {
+					arr[k] = L[i];
+					i++;
+					k++;
+				}
+
+				while (j < n2) {
+					arr[k] = R[j];
+					j++;
+					k++;
+				}
+		}
+	}
 
 //EJERCICIO 2
 
@@ -269,6 +314,7 @@ public class Practica01{
 
 		int[] arrayPrueba = {1,2,3,4,5,6,7,8,9,10};
 		int[][] arrayBiPrueba = {{1,2,3},{3,1,2},{2,1,3}};
+		int arrayDesordenadoPrueba[] = { 12, 11, 13, 5, 6, 7 };
 
 
 		// Arreglos para los algoritmos de Emmanuel
@@ -311,6 +357,16 @@ public class Practica01{
 			fin = System.currentTimeMillis();
 			System.out.println("El arrayC1 con el código de Emmanuel: "+ (fin - inicio) + " milisegundos.");
 			//System.out.println("Resultado C: "+Arrays.toString(resultC));
+
+		System.out.println("\nEjemplos de actividad uno con nuestro código\n");
+			inicio = System.currentTimeMillis();
+			//int[] pruebaDesorden = sort(arrayDesordenadoPrueba,0,arrayDesordenadoPrueba.length - 1);
+			fin = System.currentTimeMillis();
+			System.out.println("El arrayA1 con el código de Emmanuel: "+ (fin - inicio) + " milisegundos.");
+			//System.out.println("Resultado A: "+Arrays.toString(resultA));
+
+
+
 
 		System.out.println("\nEjemplos de actividad dos con el código de Emmanuel\n");
 
