@@ -59,13 +59,12 @@ public class Practica01{
 		int[] arrayTemp = new int[valueOne+valueTwo];
 		// i es el contador del arreglo temporal, uno y dos de los arreglos
 		for(int i = 0, uno = 0, dos = 0; i<arrayTemp.length; i++){
-			//System.out.println("El .length es: "+arrayTemp.length); 
 			if(arrayOne[uno]<arrayTwo[dos] && uno <= valueOne){
-			arrayTemp[i]=arrayOne[uno];
-			uno++;
+				arrayTemp[i]=arrayOne[uno];
+				uno++;
 			}else if(arrayTwo[dos]<arrayOne[uno] && dos <= valueTwo){
-			arrayTemp[i]=arrayTwo[dos];
-			dos++;
+				arrayTemp[i]=arrayTwo[dos];
+				dos++;
 			}else if(arrayTwo[dos]==arrayOne[uno]){
 				arrayTemp[i]=arrayOne[uno];
 				arrayTemp[i+1]=arrayTwo[dos];
@@ -73,11 +72,7 @@ public class Practica01{
 				dos++;
 				uno++;
 			}
-
-			System.out.println("En la posicion "+i+" El arreglo va: "+Arrays.toString(arrayTemp));
-
 		}
-
 		return arrayTemp;
 	}
 
@@ -239,8 +234,6 @@ public class Practica01{
 		int[] arrayPrueba = {1,2,3,4,5,6,7,8,9,10};
 		int[][] arrayBiPrueba = {{1,2,3},{3,1,2},{2,1,3}};
 
-		
-
 
 		// Arreglos para los algoritmos de Emmanuel
 		int[] arrayA1 = ArrayReader.readArray(directorio1 + "ArrayA1.txt");
@@ -250,13 +243,21 @@ public class Practica01{
 		int[] arrayC1 = ArrayReader.readArray(directorio1 + "ArrayC1.txt");
 		int[] arrayC2 = ArrayReader.readArray(directorio1 + "ArrayC2.txt");
 
-		// Arreglos para nuestros algoritmos
+		int[] arrayD1 = ArrayReader.readArray(directorio1 + "ArrayD1.txt");
+		int[] arrayD2 = ArrayReader.readArray(directorio1 + "ArrayD2.txt");
+		int[] arrayE1 = ArrayReader.readArray(directorio1 + "ArrayE1.txt");
+		int[] arrayE2 = ArrayReader.readArray(directorio1 + "ArrayE2.txt");
+		int[] arrayF1 = ArrayReader.readArray(directorio1 + "ArrayF1.txt");
+		int[] arrayF2 = ArrayReader.readArray(directorio1 + "ArrayF2.txt");
+
+		/* Arreglos para nuestros algoritmos
 		int[] arrayA11 = ArrayReader.readArray(directorio1 + "ArrayA1.txt");
 		int[] arrayA22 = ArrayReader.readArray(directorio1 + "ArrayA2.txt");
 		int[] arrayB11 = ArrayReader.readArray(directorio1 + "ArrayB1.txt");
 		int[] arrayB22 = ArrayReader.readArray(directorio1 + "ArrayB2.txt");
 		int[] arrayC11 = ArrayReader.readArray(directorio1 + "ArrayC1.txt");
 		int[] arrayC22 = ArrayReader.readArray(directorio1 + "ArrayC2.txt");
+		*/
 
 		// Arreglos bidimensionales para los algoritmos 
 		int[][] boardA = ArrayReader.readMatrix(directorio2 + "BoardA.txt");
@@ -264,24 +265,50 @@ public class Practica01{
 		int[][] boardC = ArrayReader.readMatrix(directorio2 + "BoardC.txt");
 		int[][] boardD = ArrayReader.readMatrix(directorio2 + "BoardD.txt");
 
+
 		System.out.println("\nEjemplos de actividad uno con el código de Emmanuel\n");
 			inicio = System.currentTimeMillis();
-			int[] resultA = mergeSortedArray(arrayA1, 500, arrayA2, 500);
+			int[] resultA = mergeSortedArray(arrayA1, 500, arrayA2, 700);
 			fin = System.currentTimeMillis();
-			System.out.println("El arrayA1 con el código de Emmanuel: "+ (fin - inicio) + " milisegundos.");
+			System.out.println("El arrayA1 y arrayA2 con el código de Emmanuel tardó: "+ (fin - inicio) + " milisegundos.");
 			//System.out.println("Resultado A: "+Arrays.toString(resultA));
 
 			inicio = System.currentTimeMillis();
-			int[] resultB = mergeSortedArray(arrayB1, 500, arrayB2, 500);
+			int[] resultB = mergeSortedArray(arrayB1, 2000, arrayB2, 3500);
 			fin = System.currentTimeMillis();
-			System.out.println("El arrayB1 con el código de Emmanuel: "+ (fin - inicio) + " milisegundos.");
+			System.out.println("El arrayB1 y arrayB2 con el código de Emmanuel tardó: "+ (fin - inicio) + " milisegundos.");
 			//System.out.println("Resultado B: "+Arrays.toString(resultB));
 
 			inicio = System.currentTimeMillis();
-			int[] resultC = mergeSortedArray(arrayC1, 500, arrayC2, 500);
+			int[] resultC = mergeSortedArray(arrayC1, 4000, arrayC2, 4000);
 			fin = System.currentTimeMillis();
-			System.out.println("El arrayC1 con el código de Emmanuel: "+ (fin - inicio) + " milisegundos.");
+			System.out.println("El arrayC1 y arrayC2 con el código de Emmanuel tardó: "+ (fin - inicio) + " milisegundos.");
 			//System.out.println("Resultado C: "+Arrays.toString(resultC));
+
+			inicio = System.currentTimeMillis();
+			int[] resultD = mergeSortedArray(arrayD1, 7000, arrayD2, 8000);
+			fin = System.currentTimeMillis();
+			System.out.println("El arrayD1 y arrayD2 con el código de Emmanuel tardó: "+ (fin - inicio) + " milisegundos.");
+			//System.out.println("Resultado D: "+Arrays.toString(resultD));
+
+			inicio = System.currentTimeMillis();
+			int[] resultE = mergeSortedArray(arrayE1, 15000, arrayE2, 19000);
+			fin = System.currentTimeMillis();
+			System.out.println("El arrayE1 y arrayE2 con el código de Emmanuel tardó: "+ (fin - inicio) + " milisegundos.");
+			//System.out.println("Resultado D: "+Arrays.toString(resultE));
+
+			inicio = System.currentTimeMillis();
+			int[] resultF = mergeSortedArray(arrayF1, 30000, arrayF2, 25000);
+			fin = System.currentTimeMillis();
+			System.out.println("El arrayF1 y arrayF2 con el código de Emmanuel tardó: "+ (fin - inicio) + " milisegundos.");
+			//System.out.println("Resultado D: "+Arrays.toString(resultF));
+
+
+
+
+
+
+
 
 			System.out.println("\nEjemplos de actividad uno con nuestro código\n");
 			inicio = System.currentTimeMillis();
@@ -291,14 +318,25 @@ public class Practica01{
 			//System.out.println("Resultado A: "+Arrays.toString(resultA));
 
 		System.out.println("\nEjemplos de actividad uno con nuestro codigo\n");
-			int [] pruebaUno = {1,3,5,6,7};
-			int [] pruebaDos = {2,4,5,9};
+			inicio = System.currentTimeMillis();
+			int[] resultadoPrueba = mergeSortedArraySolution(arrayA1, 500, arrayA2, 500);
+			fin = System.currentTimeMillis();
+			System.out.println("El arrayA1 con nuestro codigo en el ejercicio uno tarda: "+ (fin - inicio) + " milisegundos.");
+			
+
+
+			/*int [] pruebaUno = {13,29,58,58,74,90,91};
+			int [] pruebaDos = {3,11,13,16,27,56,59,61,88,90};
 
 			System.out.println("Arreglo Uno: "+Arrays.toString(pruebaUno));
 			System.out.println("Arreglo Dos: "+Arrays.toString(pruebaDos));
-			// Más eficiente
-			int[] resultadoPrueba = mergeSortedArraySolution(pruebaUno, 4, pruebaDos, 2);
-			System.out.println("Arreglo mixto: "+Arrays.toString(resultadoPrueba));
+			// Más eficiente?
+			resultadoPrueba = mergeSortedArraySolution(pruebaUno, 3, pruebaDos, 5);
+			System.out.println("Arreglo mixto: "+Arrays.toString(resultadoPrueba));*/
+
+
+
+
 			
 
 		System.out.println("\nEjemplos de actividad dos con el código de Emmanuel\n");
@@ -371,19 +409,19 @@ public class Practica01{
 		System.out.println("\nEjemplos de actividad tres con nuestro código\n");
 
 			inicio = System.currentTimeMillis();
-			rotateArraySolution(arrayA11, 200);
+			rotateArraySolution(arrayA1, 200);
 			fin = System.currentTimeMillis();
 			System.out.println("El arrayA11 con nuestro código tardó: "+ (fin - inicio) + " milisegundos.");
 			//System.out.println("Arreglo A1 rotado 200 veces: " + Arrays.toString(arrayA11));
 
 			inicio = System.currentTimeMillis();
-			rotateArraySolution(arrayB11, 200);
+			rotateArraySolution(arrayB1, 200);
 			fin = System.currentTimeMillis();
 			System.out.println("El arrayB11 con nuestro código tardó: "+ (fin - inicio) + " milisegundos.");
 			//System.out.println("Arreglo B1 rotado 200 veces: " + Arrays.toString(arrayB11));
 
 			inicio = System.currentTimeMillis();
-			rotateArraySolution(arrayC11, 200);
+			rotateArraySolution(arrayC1, 200);
 			fin = System.currentTimeMillis();
 			System.out.println("El arrayC11 con nuestro código tardó: "+ (fin - inicio) + " milisegundos.");
 			//System.out.println("Arreglo C1 rotado 200 veces: " + Arrays.toString(arrayC11));
