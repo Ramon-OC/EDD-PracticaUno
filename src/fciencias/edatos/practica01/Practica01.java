@@ -69,35 +69,6 @@ public class Practica01{
 				arrayTemp[j + valueOne] = arrayTwo[j]; //2
 		}
 
-		int numeroDePasos = 0;
-		long inicioPrueba = System.currentTimeMillis();
-
-		for (int j = 0; j < arrayTemp.length - 1; j++) {
-			if (arrayTemp[j] > arrayTemp[j + 1]) {
-				int temp = arrayTemp[j];
-				arrayTemp[j] = arrayTemp[j + 1];
-				arrayTemp[j + 1] = temp;
-				j = -1;
-				numeroDePasos++;
-			}
-		}
-
-
-		long finalPrueba = System.currentTimeMillis();
-		System.out.println("Tiempo xd: "+(finalPrueba-inicioPrueba));
-		System.out.println("El numero de pasos es: "+numeroDePasos+(arrayTemp.length));
-
-
-		for (int j = 0; j < arrayTemp.length - 1; j++) {
-			// Buscar el más grande de todo el arreglo
-
-
-
-
-		}
-
-
-
 		return arrayTemp;
 	}
 
@@ -105,15 +76,20 @@ public class Practica01{
 		int size = valueOne+valueTwo; //5
 		int[] arrayTemp = new int[size];//3
 
-		for(int i = 0; i<arrayTemp.length; i++){
-			if(arrayOne[i]<arrayTwo[i]){
-			arrayTemp[i]=arrayOne[i];
-			}else if(arrayTwo[i]<arrayOne[i]){
-			arrayTemp[i]=arrayTwo[i];
+		for(int i = 0, uno = 0, dos = 0; i<arrayTemp.length; i++){
+			if(arrayOne[uno]<arrayTwo[dos] && uno <= valueOne){
+			arrayTemp[i]=arrayOne[uno];
+			uno++;
+
+			}
+			if(arrayTwo[dos]<arrayOne[uno] && dos <= valueTwo){
+			arrayTemp[i]=arrayTwo[dos];
+			dos++;
 			}
 		}
 
 		return arrayTemp;
+
 	}
 
 
