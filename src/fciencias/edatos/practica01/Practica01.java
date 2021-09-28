@@ -93,70 +93,29 @@ public class Practica01{
 
 
 
+
 		}
 
-
-
-
-		/* Ordenar de menor a mayor
-		for (int j = 0; j < arrayTemp.length - 1; j++) {
-			if (arrayTemp[j] > arrayTemp[j + 1]) {
-				int temp = arrayTemp[j];
-				arrayTemp[j] = arrayTemp[j + 1];
-				arrayTemp[j + 1] = temp;
-				j = -1;
-			}
-		}*/
 
 
 		return arrayTemp;
 	}
 
-	public static void sort(int arr[], int l, int r){
-		if (l < r) {
-			int m =l+ (r-l)/2;
-			sort(arr, l, m);
-			sort(arr, m + 1, r);
+	public static int[] mergeArrayFinal(int[]arrayOne, int valueOne, int[]arrayTwo, int valueTwo){
+		int size = valueOne+valueTwo; //5
+		int[] arrayTemp = new int[size];//3
 
-
-				int n1 = m - l + 1;
-				int n2 = r - m;
-				int L[] = new int[n1];
-				int R[] = new int[n2];
-				for (int i = 0; i < n1; ++i)
-					L[i] = arr[l + i];
-				for (int j = 0; j < n2; ++j)
-					R[j] = arr[m + 1 + j];
-
-
-				int i = 0, j = 0;
-
-				int k = l;
-				while (i < n1 && j < n2) {
-					if (L[i] <= R[j]) {
-						arr[k] = L[i];
-						i++;
-					}
-					else {
-						arr[k] = R[j];
-						j++;
-					}
-					k++;
-				}
-
-				while (i < n1) {
-					arr[k] = L[i];
-					i++;
-					k++;
-				}
-
-				while (j < n2) {
-					arr[k] = R[j];
-					j++;
-					k++;
-				}
+		for(int i = 0; i<arrayTemp.length; i++){
+			if(arrayOne[i]<arrayTwo[i]){
+			arrayTemp[i]=arrayOne[i];
+			}else if(arrayTwo[i]<arrayOne[i]){
+			arrayTemp[i]=arrayTwo[i];
+			}
 		}
+
+		return arrayTemp;
 	}
+
 
 //EJERCICIO 2
 
