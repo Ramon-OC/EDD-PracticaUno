@@ -30,7 +30,7 @@ Contiene los siguientes comandos:
     <jar destfile="build/jar/Practica01.jar" basedir="build/classes" >
       <manifest >
 	<attribute name="DependencyFinder" value="main" />
-	<attribute name="Main-Class" value="fciencias.edatos.practica01.Practica01" />
+	<attribute name="Main-Class" value="Practica01" />
       </manifest >
     </jar >
   </target>

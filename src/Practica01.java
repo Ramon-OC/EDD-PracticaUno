@@ -1,4 +1,4 @@
-package fciencias.edatos.practica01;
+//package fciencias.edatos.practica01;
 import java.util.Arrays;
 
 /**
@@ -269,8 +269,8 @@ public class Practica01{
 		// Mensaje en main
 
 		long inicio,fin; // Variables para medir el tiempo
-		String directorio1 = "src/fciencias/edatos/practica01/Examples/ArrayExamples/";
-		String directorio2 = "src/fciencias/edatos/practica01/Examples/BoardExamples/";
+		String directorio1 = "src/Examples/ArrayExamples/";
+		String directorio2 = "src/Examples/BoardExamples/";
 
 		int[] arrayPrueba = {1,2,3,4,5,6,7,8,9,10};
 		int[][] arrayBiPrueba = {{1,2,3},{3,1,2},{2,1,3}};
