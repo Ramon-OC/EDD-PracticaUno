@@ -56,41 +56,23 @@ public class Practica01{
 	* @return un arreglo ordenado de longitud m+n con la mezcla definida.
 	*/
 	public static int[] mergeSortedArraySolution(int[]arrayOne, int valueOne, int[]arrayTwo, int valueTwo){
-		int size = valueOne+valueTwo; //5
-		int[] arrayTemp = new int[size];//3
-
-		//Lenar valueOne
-		for (int i=0; i<valueOne; i++) { // 1+(n+1)+n = 2n+2
-				arrayTemp[i] = arrayOne[i]; // 2
-		}
-
-		// Llenar valueTwo
-		for(int j=0; j<valueTwo; j++){
-				arrayTemp[j + valueOne] = arrayTwo[j]; //2
-		}
-
-		return arrayTemp;
-	}
-
-	public static int[] mergeArrayFinal(int[]arrayOne, int valueOne, int[]arrayTwo, int valueTwo){
-		int size = valueOne+valueTwo; //5
-		int[] arrayTemp = new int[size];//3
-
+		int[] arrayTemp = new int[valueOne+valueTwo];
+		// i es el contador del arreglo temporal, uno y dos de los arreglos
 		for(int i = 0, uno = 0, dos = 0; i<arrayTemp.length; i++){
+			//System.out.println("El .length es: "+arrayTemp.length); 
 			if(arrayOne[uno]<arrayTwo[dos] && uno <= valueOne){
 			arrayTemp[i]=arrayOne[uno];
 			uno++;
-			}
-
-			if(arrayTwo[dos]<arrayOne[uno] && dos <= valueTwo){
+			}else if(arrayTwo[dos]<arrayOne[uno] && dos <= valueTwo){
 			arrayTemp[i]=arrayTwo[dos];
 			dos++;
 			}
 
+			System.out.println("En la posicion "+i+" El arreglo va: "+Arrays.toString(arrayTemp));
+
 		}
 
 		return arrayTemp;
-
 	}
 
 
@@ -305,14 +287,13 @@ public class Practica01{
 		System.out.println("\nEjemplos de actividad uno con nuestro codigo\n");
 			int [] pruebaUno = {1,3,5,6,7};
 			int [] pruebaDos = {2,4,8,9};
+
 			System.out.println("Arreglo Uno: "+Arrays.toString(pruebaUno));
 			System.out.println("Arreglo Dos: "+Arrays.toString(pruebaDos));
-			int[] resultadoPrueba = mergeArrayFinal(pruebaUno, 4, pruebaDos, 2);
+			// Más eficiente
+			int[] resultadoPrueba = mergeSortedArraySolution(pruebaUno, 4, pruebaDos, 2);
 			System.out.println("Arreglo mixto: "+Arrays.toString(resultadoPrueba));
 			
-
-
-
 
 		System.out.println("\nEjemplos de actividad dos con el código de Emmanuel\n");
 
