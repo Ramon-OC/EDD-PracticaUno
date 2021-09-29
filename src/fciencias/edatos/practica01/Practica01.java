@@ -58,7 +58,7 @@ public class Practica01{
 	* @return un arreglo ordenado de longitud m+n con la mezcla definida.
 	*/
 	public static int[] mergeSortedArraySolution(int[]arrayOne, int valueOne, int[]arrayTwo, int valueTwo){
-		int[] arrayTemp = new int[valueOne+valueTwo+4];
+		int[] arrayTemp = new int[valueOne+valueTwo];
 		for(int i = 0, uno = 0, dos = 0; i<arrayTemp.length; i++){ 		// i es el contador del arreglo temporal, uno y dos de los arreglos
 			if(arrayOne[uno]<arrayTwo[dos] && uno<valueOne || dos == valueTwo && uno < valueOne){
 				arrayTemp[i]=arrayOne[uno];
@@ -299,58 +299,61 @@ public class Practica01{
 			System.out.println("El arrayF1 y arrayF2 con el código de Emmanuel tardó: "+ (fin - inicio) + " milisegundos.");
 			//System.out.println("Resultado D: "+Arrays.toString(resultF));
 
-		System.out.println("\nEjemplos de actividad uno con nuestro codigo\n");
+		/*System.out.println("\nEjemplos del pdf actividad uno con nuestro codigo\n");
 
-			int [] pruebaUno = {13,29,58,58,74,90,91};
-			int [] pruebaDos = {3,11,13,16,27,56,59,61,88,90};
+			int [] pruebaUno1 = {13,29,58,58,74,90,91};
+			int [] pruebaDos1 = {3,11,13,16,27,56,59,61,88,90};
+			int [] pruebaUno2 = {1,24,49,51,63,79,99,107,107,126,128,149};
+			int [] pruebaDos2 = {26,54,68,97,103,107,109,123,126,132,155,175,187,208,230};
 
-			System.out.println("Arreglo Uno: "+Arrays.toString(pruebaUno));
-			System.out.println("Arreglo Dos: "+Arrays.toString(pruebaDos));
-			// Más eficiente?
-			int [] resultadoPrueba = mergeSortedArraySolution(pruebaUno, 3, pruebaDos, 5);
-			System.out.println("Arreglo mixto: "+Arrays.toString(resultadoPrueba));
-			
-			/*inicio = System.currentTimeMillis();
-			int[] resultadoA = mergeSortedArraySolution(arrayA1, 500, arrayA2, 700);
-			fin = System.currentTimeMillis();
-			System.out.println("El arrayA1 y arrayA2 con nuestro codigo tardó: "+ (fin - inicio) + " milisegundos.");
-			//System.out.println("Resultado A: "+Arrays.toString(resultadoA));
-	
-			inicio = System.currentTimeMillis();
-			int[] resultadoB = mergeSortedArraySolution(arrayB1, 2000, arrayB2, 3500);
-			fin = System.currentTimeMillis();
-			System.out.println("El arrayB1 y arrayB2 con nuestro codigo tardó: "+ (fin - inicio) + " milisegundos.");
-			//System.out.println("Resultado B: "+Arrays.toString(resultB));
-	
-			inicio = System.currentTimeMillis();
-			int[] resultadoC = mergeSortedArraySolution(arrayC1, 4000, arrayC2, 4000);
-			fin = System.currentTimeMillis();
-			System.out.println("El arrayC1 y arrayC2 con con nuestro codigo tardó: "+ (fin - inicio) + " milisegundos.");
-			//System.out.println("Resultado C: "+Arrays.toString(resultC));
-	
-			inicio = System.currentTimeMillis();
-			int[] resuladoD = mergeSortedArraySolution(arrayD1, 7000, arrayD2, 8000);
-			fin = System.currentTimeMillis();
-			System.out.println("El arrayD1 y arrayD2 con nuestro codigo tardó: "+ (fin - inicio) + " milisegundos.");
-			//System.out.println("Resultado D: "+Arrays.toString(resultD));
-	
-			inicio = System.currentTimeMillis();
-			int[] resuladoE = mergeSortedArraySolution(arrayE1, 15000, arrayE2, 19000);
-			fin = System.currentTimeMillis();
-			System.out.println("El arrayE1 y arrayE2 con nuestro codigo tardó: "+ (fin - inicio) + " milisegundos.");
-			//System.out.println("Resultado D: "+Arrays.toString(resultE));
-	
-			inicio = System.currentTimeMillis();
-			int[] resultadoF = mergeSortedArraySolution(arrayF1, 30000, arrayF2, 25000);
-			fin = System.currentTimeMillis();
-			System.out.println("El arrayF1 y arrayF2 con nuestro codigo tardó: "+ (fin - inicio) + " milisegundos.");
-			//System.out.println("Resultado D: "+Arrays.toString(resultF));*/
+			System.out.println("Arreglo Uno: "+Arrays.toString(pruebaUno1));
+			System.out.println("Arreglo Dos: "+Arrays.toString(pruebaDos1));
+			int [] resultadoPrueba1 = mergeSortedArraySolution(pruebaUno1, 3, pruebaDos1, 5);
+			System.out.println("Arreglo mixto: "+Arrays.toString(resultadoPrueba1));
+			System.out.println();
+			System.out.println("Arreglo Uno: "+Arrays.toString(pruebaUno1));
+			System.out.println("Arreglo Dos: "+Arrays.toString(pruebaDos1));
+			int [] resultadoPrueba2 = mergeSortedArraySolution(pruebaUno2, 5, pruebaDos2, 5);
+			System.out.println("Arreglo mixto: "+Arrays.toString(resultadoPrueba2));*/
 
+		System.out.println("\nEjemplos de actividad uno con el código de Emmanuel\n");
+			inicio = System.currentTimeMillis();
+			int[] resultAPropio = mergeSortedArraySolution(arrayA1, 500, arrayA2, 700);
+			fin = System.currentTimeMillis();
+			System.out.println("El arrayA1 y arrayA2 con nuestro código tardó: "+ (fin - inicio) + " milisegundos.");
+			//System.out.println("Resultado A: "+Arrays.toString(resultAPropio));
 
+			inicio = System.currentTimeMillis();
+			int[] resultBPropio = mergeSortedArraySolution(arrayB1, 2000, arrayB2, 3500);
+			fin = System.currentTimeMillis();
+			System.out.println("El arrayB1 y arrayB2 con nuestro código tardó: "+ (fin - inicio) + " milisegundos.");
+			//System.out.println("Resultado B: "+Arrays.toString(resultBPropio));
 
+			inicio = System.currentTimeMillis();
+			int[] resultCPropio = mergeSortedArraySolution(arrayC1, 4000, arrayC2, 4000);
+			fin = System.currentTimeMillis();
+			System.out.println("El arrayC1 y arrayC2 con nuestro código tardó: "+ (fin - inicio) + " milisegundos.");
+			//System.out.println("Resultado C: "+Arrays.toString(resultCPropio));
+
+			inicio = System.currentTimeMillis();
+			int[] resultDPropio = mergeSortedArraySolution(arrayD1, 7000, arrayD2, 8000);
+			fin = System.currentTimeMillis();
+			System.out.println("El arrayD1 y arrayD2 con nuestro código tardó: "+ (fin - inicio) + " milisegundos.");
+			//System.out.println("Resultado D: "+Arrays.toString(resultDPropio));
+
+			inicio = System.currentTimeMillis();
+			int[] resultEPropio = mergeSortedArraySolution(arrayE1, 15000, arrayE2, 19000);
+			fin = System.currentTimeMillis();
+			System.out.println("El arrayE1 y arrayE2 con nuestro código tardó: "+ (fin - inicio) + " milisegundos.");
+			//System.out.println("Resultado D: "+Arrays.toString(resultEPropio));
+
+			inicio = System.currentTimeMillis();
+			int[] resultFPropio = mergeSortedArraySolution(arrayF1, 30000, arrayF2, 25000);
+			fin = System.currentTimeMillis();
+			System.out.println("El arrayF1 y arrayF2 con nuestro código tardó: "+ (fin - inicio) + " milisegundos.");
+			//System.out.println("Resultado D: "+Arrays.toString(resultFPropio));
 
 		System.out.println("\nEjemplos de actividad dos con el código de Emmanuel\n");
-
 			inicio = System.currentTimeMillis();
 			boolean boardResultA = isValidBoard(boardA);
 			fin = System.currentTimeMillis();
