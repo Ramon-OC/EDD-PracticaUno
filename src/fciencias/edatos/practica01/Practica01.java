@@ -495,7 +495,4 @@ public class Practica01{
 		}
 	}
 
-
-
-
 }
