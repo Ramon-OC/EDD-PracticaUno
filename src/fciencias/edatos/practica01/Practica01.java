@@ -50,10 +50,10 @@ public class Practica01{
 
 	/** 
 	* Hace la mezcla de dos arreglos ordenados desde la primera posición hasta
-	* una posición límite
-	* @param array1 el primer arreglo a mezlar
+	* una posición límite. Compara los extremos de la izquierda para ordenarlos nuevamente
+	* @param arrayOne el primer arreglo a mezlar
 	* @param valueOne el límite de mezcla del primer arreglo
-	* @param array2 el segundo arreglo a mezclar
+	* @param arrayTwo el segundo arreglo a mezclar
 	* @param valueTwo el límite de mezcla del segundo arreglo.
 	* @return un arreglo ordenado de longitud m+n con la mezcla definida.
 	*/
@@ -246,14 +246,13 @@ public class Practica01{
 		int[] arrayF1 = ArrayReader.readArray(directorio1 + "ArrayF1.txt");
 		int[] arrayF2 = ArrayReader.readArray(directorio1 + "ArrayF2.txt");
 
-		/* Arreglos para nuestros algoritmos
+		// Arreglos para el ejercicio tres
 		int[] arrayA11 = ArrayReader.readArray(directorio1 + "ArrayA1.txt");
-		int[] arrayA22 = ArrayReader.readArray(directorio1 + "ArrayA2.txt");
 		int[] arrayB11 = ArrayReader.readArray(directorio1 + "ArrayB1.txt");
-		int[] arrayB22 = ArrayReader.readArray(directorio1 + "ArrayB2.txt");
 		int[] arrayC11 = ArrayReader.readArray(directorio1 + "ArrayC1.txt");
-		int[] arrayC22 = ArrayReader.readArray(directorio1 + "ArrayC2.txt");
-		*/
+		int[] arrayD11 = ArrayReader.readArray(directorio1 + "ArrayD1.txt");
+		int[] arrayE11 = ArrayReader.readArray(directorio1 + "ArrayE1.txt");
+		int[] arrayF11 = ArrayReader.readArray(directorio1 + "ArrayF1.txt");
 
 		// Arreglos bidimensionales para los algoritmos 
 		int[][] boardA = ArrayReader.readMatrix(directorio2 + "BoardA.txt");
@@ -401,43 +400,78 @@ public class Practica01{
 
 		System.out.println("\nEjemplos de actividad tres con el código de Emmanuel\n");
 			inicio = System.currentTimeMillis();
-			rotateArray(arrayA1, 200);
+			rotateArray(arrayA1, 500);
 			fin = System.currentTimeMillis();
 			System.out.println("El arrayA1 con el código de Emmanuel: "+ (fin - inicio) + " milisegundos.");
-			//System.out.println("Arreglo A1 rotado 200 veces: " + Arrays.toString(arrayA11));
+			//System.out.println("Arreglo A1 rotado 500 veces: " + Arrays.toString(arrayA1));
 
 			inicio = System.currentTimeMillis();
-			rotateArray(arrayB1, 200);
+			rotateArray(arrayB1, 1000);
 			fin = System.currentTimeMillis();
 			System.out.println("El arrayB1 con el código de Emmanuel: "+ (fin - inicio) + " milisegundos.");
-			//System.out.println("Arreglo B1 rotado 200 veces: " + Arrays.toString(arrayA11));
+			//System.out.println("Arreglo B1 rotado 1000 veces: " + Arrays.toString(arrayB1));
 
 			inicio = System.currentTimeMillis();
-			rotateArray(arrayC1, 200);
+			rotateArray(arrayC1, 2000);
 			fin = System.currentTimeMillis();
 			System.out.println("El arrayC1 con el código de Emmanuel: "+ (fin - inicio) + " milisegundos.");
-			//System.out.println("Arreglo C1 rotado 200 veces: " + Arrays.toString(arrayA11));
+			//System.out.println("Arreglo C1 rotado 2000 veces: " + Arrays.toString(arrayC1));
+
+			inicio = System.currentTimeMillis();
+			rotateArray(arrayA1, 3000);
+			fin = System.currentTimeMillis();
+			System.out.println("El arrayD1 con el código de Emmanuel: "+ (fin - inicio) + " milisegundos.");
+			//System.out.println("Arreglo D1 rotado 3000 veces: " + Arrays.toString(arrayD1));
+
+			inicio = System.currentTimeMillis();
+			rotateArray(arrayB1, 10000);
+			fin = System.currentTimeMillis();
+			System.out.println("El arrayE1 con el código de Emmanuel: "+ (fin - inicio) + " milisegundos.");
+			//System.out.println("Arreglo E1 rotado 10000 veces: " + Arrays.toString(arrayE1));
+
+			inicio = System.currentTimeMillis();
+			rotateArray(arrayC1, 20000);
+			fin = System.currentTimeMillis();
+			System.out.println("El arrayF1 con el código de Emmanuel: "+ (fin - inicio) + " milisegundos.");
+			//System.out.println("Arreglo F1 rotado 20000 veces: " + Arrays.toString(arrayF1));
 
 
 		System.out.println("\nEjemplos de actividad tres con nuestro código\n");
+			inicio = System.currentTimeMillis();
+			rotateArraySolution(arrayA11, 500);
+			fin = System.currentTimeMillis();
+			System.out.println("El arrayA1 con nuestro código: "+ (fin - inicio) + " milisegundos.");
+			//System.out.println("Arreglo A1 rotado 500 veces: " + Arrays.toString(arrayA1));
 
 			inicio = System.currentTimeMillis();
-			rotateArraySolution(arrayA1, 200);
+			rotateArraySolution(arrayB11, 1000);
 			fin = System.currentTimeMillis();
-			System.out.println("El arrayA11 con nuestro código tardó: "+ (fin - inicio) + " milisegundos.");
-			//System.out.println("Arreglo A1 rotado 200 veces: " + Arrays.toString(arrayA11));
+			System.out.println("El arrayB1 con nuestro código: "+ (fin - inicio) + " milisegundos.");
+			//System.out.println("Arreglo B1 rotado 1000 veces: " + Arrays.toString(arrayB11));
 
 			inicio = System.currentTimeMillis();
-			rotateArraySolution(arrayB1, 200);
+			rotateArraySolution(arrayC11, 2000);
 			fin = System.currentTimeMillis();
-			System.out.println("El arrayB11 con nuestro código tardó: "+ (fin - inicio) + " milisegundos.");
-			//System.out.println("Arreglo B1 rotado 200 veces: " + Arrays.toString(arrayB11));
+			System.out.println("El arrayC1 con nuestro código: "+ (fin - inicio) + " milisegundos.");
+			//System.out.println("Arreglo C1 rotado 2000 veces: " + Arrays.toString(arrayC11));
 
 			inicio = System.currentTimeMillis();
-			rotateArraySolution(arrayC1, 200);
+			rotateArraySolution(arrayD11, 3000);
 			fin = System.currentTimeMillis();
-			System.out.println("El arrayC11 con nuestro código tardó: "+ (fin - inicio) + " milisegundos.");
-			//System.out.println("Arreglo C1 rotado 200 veces: " + Arrays.toString(arrayC11));
+			System.out.println("El arrayD1 con nuestro código: "+ (fin - inicio) + " milisegundos.");
+			//System.out.println("Arreglo D1 rotado 3000 veces: " + Arrays.toString(arrayD11));
+
+			inicio = System.currentTimeMillis();
+			rotateArraySolution(arrayE11, 10000);
+			fin = System.currentTimeMillis();
+			System.out.println("El arrayE1 con nuestro código: "+ (fin - inicio) + " milisegundos.");
+			//System.out.println("Arreglo E1 rotado 10000 veces: " + Arrays.toString(arrayE11));
+
+			inicio = System.currentTimeMillis();
+			rotateArraySolution(arrayF11, 20000);
+			fin = System.currentTimeMillis();
+			System.out.println("El arrayF1 con nuestro código: "+ (fin - inicio) + " milisegundos.");
+			//System.out.println("Arreglo F1 rotado 20000 veces: " + Arrays.toString(arrayF11));
 
 
 	}
@@ -446,7 +480,6 @@ public class Practica01{
 	 * Imprime en pantalla una matriz de nxn.
 	 * @param matriz la matriz de nxn 
 	 */
-
 	//Método auxiliar solo para probar los métodos de los ejercicios, eliminar despues de terminar las pruebas.
 
 	public static void auxMostrarMatriz(int[][] matriz){ 
