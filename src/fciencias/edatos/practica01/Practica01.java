@@ -1,11 +1,13 @@
 package fciencias.edatos.practica01;
+
 import java.util.Arrays;
 
 //import jdk.nashorn.internal.runtime.regexp.joni.exception.ValueException;
 
 /**
 * Práctica 1 del curso de Estructuras de Datos.
-* @author Emmanuel Cruz Hernández.
+* @author Pintor Muñoz Pedro Joshue - // 420053796
+* @author Ortiz Castañeda José Ramón - 318357115
 * @version 2.0 Septiembre 2021.
 * @since Laboratorio de Estructuras de Datos 2022-1.
 */
@@ -131,11 +133,11 @@ public class Practica01{
 
 		for(int i=0; i<num.length;i++ ){
 
-			for(int j=0; j<num[0].length;j++){		//Revisa linea por linea si hay elementos repetidos		
-				if(num[i][j]<=num[0].length){	//Verifica que la cifra sea menor o igual al largo de la tabla
+			for(int j=0; j<num[0].length;j++){		//Revisa linea por linea si hay elementos repetidos					
+				if(num[i][j]<=num[0].length){		//Verifica que la cifra sea menor o igual al largo de la tabla
 					lineaTemp[num[i][j]]++;
 				}else{
-					System.out.println("Si la cifra es mayor que el largo del arreglo, entonces mandar un Error");//Recordatorio
+					System.out.println("ERROR: La cifra es mayor que el largo del arreglo");
 				}
 				if(lineaTemp[num[j][i]]>1){
 					return true;
@@ -148,7 +150,7 @@ public class Practica01{
 				if(num[j][i]<=num.length){ 			//Verifica que la cifra sea menor o igual al largo de la tabla
 					columnaTemp[num[j][i]]++;
 				}else{
-					System.out.println("Si la cifra es mayor que el largo del arreglo, entonces mandar un Error");//Recordatorio
+					System.out.println("ERROR: La cifra es mayor que el largo del arreglo");
 				}
 				if(columnaTemp[num[j][i]]>1){
 					return true;
@@ -156,29 +158,7 @@ public class Practica01{
 			}
 			columnaTemp=new int[num.length+1];				
 		}
-
 		return duplicate;
-
-		/*int max = num [0];
-		int value;
-		boolean duplicate = false;
-
-
-		for (int i = 0; i < num.length; i++) {
-			if (num[i] > max) {
-				max = num[i];
-			}
-		}
-		int[] casillasDuplicadas = new int[max+1];
-
-		for (int i = 0; i<num.length;i++){
-			value = num[i];
-			casillasDuplicadas[value] = casillasDuplicadas[value]+1;
-			if(casillasDuplicadas[value]>1 || num[i]>num.length){ // La cifra no puede ser mayor al largo de nuestro arreglo
-				duplicate = true;
-				break;
-			}
-		}*/		
 	}
 
 
@@ -259,6 +239,8 @@ public class Practica01{
 		int[][] boardB = ArrayReader.readMatrix(directorio2 + "BoardB.txt");
 		int[][] boardC = ArrayReader.readMatrix(directorio2 + "BoardC.txt");
 		int[][] boardD = ArrayReader.readMatrix(directorio2 + "BoardD.txt");
+		int[][] boardE = ArrayReader.readMatrix(directorio2 + "BoardE.txt");
+		int[][] boardF = ArrayReader.readMatrix(directorio2 + "BoardF.txt");
 
 
 		System.out.println("\nEjemplos de actividad uno con el código de Emmanuel\n");
@@ -315,7 +297,7 @@ public class Practica01{
 			int [] resultadoPrueba2 = mergeSortedArraySolution(pruebaUno2, 5, pruebaDos2, 5);
 			System.out.println("Arreglo mixto: "+Arrays.toString(resultadoPrueba2));*/
 
-		System.out.println("\nEjemplos de actividad uno con el código de Emmanuel\n");
+		System.out.println("\nEjemplos de actividad uno con nuestro codigo\n");
 			inicio = System.currentTimeMillis();
 			int[] resultAPropio = mergeSortedArraySolution(arrayA1, 500, arrayA2, 700);
 			fin = System.currentTimeMillis();
@@ -352,6 +334,10 @@ public class Practica01{
 			System.out.println("El arrayF1 y arrayF2 con nuestro código tardó: "+ (fin - inicio) + " milisegundos.");
 			//System.out.println("Resultado D: "+Arrays.toString(resultFPropio));
 
+
+			/* ------------------------------------------------------------- */
+
+
 		System.out.println("\nEjemplos de actividad dos con el código de Emmanuel\n");
 			inicio = System.currentTimeMillis();
 			boolean boardResultA = isValidBoard(boardA);
@@ -359,13 +345,11 @@ public class Practica01{
 			System.out.println("El boardA con el código de Emmanuel: "+ (fin - inicio) + " milisegundos.");
 			//System.out.println("El tablero A con el algoritmo de Emmanuel es válido: "+boardResultA);
 
-
 			inicio = System.currentTimeMillis();
 			boolean boardResultB = isValidBoard(boardB);
 			fin = System.currentTimeMillis();
 			System.out.println("El boardB con el código de Emmanuel: "+ (fin - inicio) + " milisegundos.");
 			//System.out.println("El tablero B con el algoritmo de Emmanuel es válido: "+boardResultB);
-
 
 			inicio = System.currentTimeMillis();
 			boolean boardResultC = isValidBoard(boardC);
@@ -379,23 +363,50 @@ public class Practica01{
 			System.out.println("El boardD con el código de Emmanuel: "+ (fin - inicio) + " milisegundos.");
 			//System.out.println("El tablero D con el algoritmo de Emmanuel es válido: "+boardResultD);
 
-		System.out.println("\nEjemplos de actividad dos con nuestro codigo\n");
-			System.out.println("El tablero de prueba se ve:\n ");
-			auxMostrarMatriz(boardA);//hize un metodo auxiliar abajo de main para imprimir las tablas BORRAR ESTO
+			inicio = System.currentTimeMillis();
+			boolean boardResultE = isValidBoard(boardE);
+			fin = System.currentTimeMillis();
+			System.out.println("El boardE con el código de Emmanuel: "+ (fin - inicio) + " milisegundos.");
+			//System.out.println("El tablero E con el algoritmo de Emmanuel es válido: "+boardResultD);
 
 			inicio = System.currentTimeMillis();
-			boolean prueba = isValidBoardSolution(boardA);
+			boolean boardResultF = isValidBoard(boardF);
 			fin = System.currentTimeMillis();
+			System.out.println("El boardF con el código de Emmanuel: "+ (fin - inicio) + " milisegundos.");
+			//System.out.println("El tablero F con el algoritmo de Emmanuel es válido: "+boardResultD);
 
-			System.out.println("El piloto del código dos tarda: "+ (fin - inicio) + " milisegundos.");
-			if(prueba==true){
-				System.out.println("Hay elementos duplicados en el arreglo");
-			}else{
-				System.out.println("No hay elementos duplicados en el arreglo");
-			}
-			//System.out.println("El resultado del codigo dos es: "+pureba); // duplicado debe ser verdadero
+		System.out.println("\nEjemplos de actividad dos con nuestro codigo\n");
+			inicio = System.currentTimeMillis();
+			boolean boardSolutionA = isValidBoardSolution(boardA);
+			fin = System.currentTimeMillis();
+			System.out.println("El boardA con el nuestro codigo: "+ (fin - inicio) + " milisegundos.");
 
+			inicio = System.currentTimeMillis();
+			boolean boardSolutionB = isValidBoardSolution(boardB);
+			fin = System.currentTimeMillis();
+			System.out.println("El boardB con el nuestro codigo: "+ (fin - inicio) + " milisegundos.");
 
+			inicio = System.currentTimeMillis();
+			boolean boardSolutionC = isValidBoardSolution(boardC);
+			fin = System.currentTimeMillis();
+			System.out.println("El boardC con el nuestro codigo: "+ (fin - inicio) + " milisegundos.");
+
+			inicio = System.currentTimeMillis();
+			boolean boardSolutionD = isValidBoardSolution(boardD);
+			fin = System.currentTimeMillis();
+			System.out.println("El boardD con el nuestro codigo: "+ (fin - inicio) + " milisegundos.");
+
+			inicio = System.currentTimeMillis();
+			boolean boardSolutionE = isValidBoardSolution(boardE);
+			fin = System.currentTimeMillis();
+			System.out.println("El boardE con el nuestro codigo: "+ (fin - inicio) + " milisegundos.");
+
+			inicio = System.currentTimeMillis();
+			boolean boardSolutionF = isValidBoardSolution(boardF);
+			fin = System.currentTimeMillis();
+			System.out.println("El boardF con el nuestro codigo: "+ (fin - inicio) + " milisegundos.");
+
+			/* ------------------------------------------------------------- */
 
 
 		System.out.println("\nEjemplos de actividad tres con el código de Emmanuel\n");
@@ -434,7 +445,6 @@ public class Practica01{
 			fin = System.currentTimeMillis();
 			System.out.println("El arrayF1 con el código de Emmanuel: "+ (fin - inicio) + " milisegundos.");
 			//System.out.println("Arreglo F1 rotado 20000 veces: " + Arrays.toString(arrayF1));
-
 
 		System.out.println("\nEjemplos de actividad tres con nuestro código\n");
 			inicio = System.currentTimeMillis();
@@ -475,24 +485,4 @@ public class Practica01{
 
 
 	}
-
-	/**
-	 * Imprime en pantalla una matriz de nxn.
-	 * @param matriz la matriz de nxn 
-	 */
-	//Método auxiliar solo para probar los métodos de los ejercicios, eliminar despues de terminar las pruebas.
-
-	public static void auxMostrarMatriz(int[][] matriz){ 
-
-		for(int i=0; i<matriz.length;i++ ){
-
-			for(int j=0; j<matriz[0].length;j++){
-
-				System.out.print(matriz[i][j]+" ");
-
-			}
-			System.out.print("\n");
-		}
-	}
-
 }

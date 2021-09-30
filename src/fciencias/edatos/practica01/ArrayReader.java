@@ -1,4 +1,3 @@
-// Prueba ramon
 package fciencias.edatos.practica01;
 
 import java.io.FileReader;
