@@ -7,13 +7,13 @@
 
 ## Descripción
 
-En esta práctica 01 se nos dio a la tarea de mejorar la complejidad en tiempo de ejecución de 3 métodos haciendolos mas eficientes, anotando en tablas al final la comparación del algoritmo propuesto y el que nosotros creamos.
+En esta práctica se nos dio la tarea de mejorar la complejidad en tiempo de ejecución de tres métodos haciéndolos más eficientes, capturando al final una comparativa del algoritmo propuesto y el que nosotros creamos en un archivo Test.pdf
 
 ----
 
 ## Instrucciones de compilación y ejecución
 
-El programa funciona con la lectura de archivos .txt que contienen los arreglos con los que opera cada método, todos estos archivos están almacenados en un directorio «Test», dicha carpeta no está adjunta a la práctica por indicaciones del profesor. Es importante antes de compilar y ejecutar el programa añadir manualmente este directorio bajo el nombre «Test» en la siguiente ruta: 
+El programa funciona con la lectura de archivos .txt que contienen los arreglos con los que opera cada método, todos estos archivos están almacenados en un directorio «Test», dicha carpeta no está adjunta a la práctica por indicaciones del profesor. Es importante antes de compilar y ejecutar el programa añadir manualmente este directorio bajo el nombre «Test» en la siguiente ruta:
 
  * src/fciencias/edatos/practica01
 
@@ -24,6 +24,7 @@ Para la creación de esta práctica implementamos ant, la forma correcta de ejec
  * ant run      Corre el archivo ejecutable que se creó anteriormente.
  
  Para generar la documentación de la práctica basta con usar el comando «ant doc».
+ 
 
 ----
 
