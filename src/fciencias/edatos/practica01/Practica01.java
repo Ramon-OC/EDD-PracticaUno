@@ -203,8 +203,8 @@ public class Practica01{
 	public static void main(String[] args) {
 
 		long inicio,fin; // Variables para medir el tiempo
-		String directorio1 = "src/fciencias/edatos/practica01/Examples/ArrayExamples/";
-		String directorio2 = "src/fciencias/edatos/practica01/Examples/BoardExamples/";
+		String directorio1 = "src/fciencias/edatos/practica01/Tests/ArrayTests/";
+		String directorio2 = "src/fciencias/edatos/practica01/Tests/BoardTests/";
 
 		// Arreglos para los algoritmos de Emmanuel
 		int[] arrayA1 = ArrayReader.readArray(directorio1 + "ArrayA1.txt");
