@@ -122,8 +122,7 @@ public class Practica01{
 	 * false en otro caso.
 	 */
 	public static boolean isValidBoardSolution(int[][] num){
-		
-		//Prosible solucion
+			
 		boolean duplicate = false;
 		int[] columnaTemp = new int[num[0].length+1]; 
 		int[] lineaTemp = new int[num[0].length+1];
@@ -275,27 +274,6 @@ public class Practica01{
 			fin = System.currentTimeMillis();
 			System.out.println("El arrayF1 y arrayF2 con el código de Emmanuel tardó: "+ (fin - inicio) + " milisegundos.");
 			//System.out.println("Resultado F: "+Arrays.toString(resultF));
-
-
-
-		/*System.out.println("\nEjemplos del pdf actividad uno con nuestro código\n");
-
-			int [] pruebaUno1 = {13,29,58,58,74,90,91};
-			int [] pruebaDos1 = {3,11,13,16,27,56,59,61,88,90};
-			int [] pruebaUno2 = {1,24,49,51,63,79,99,107,107,126,128,149};
-			int [] pruebaDos2 = {26,54,68,97,103,107,109,123,126,132,155,175,187,208,230};
-
-			System.out.println("Arreglo Uno: "+Arrays.toString(pruebaUno1));
-			System.out.println("Arreglo Dos: "+Arrays.toString(pruebaDos1));
-			int [] resultadoPrueba1 = mergeSortedArraySolution(pruebaUno1, 3, pruebaDos1, 5);
-			System.out.println("Arreglo mixto: "+Arrays.toString(resultadoPrueba1));
-			
-			System.out.println("Arreglo Uno: "+Arrays.toString(pruebaUno2));
-			System.out.println("Arreglo Dos: "+Arrays.toString(pruebaDos2));
-			int [] resultadoPrueba2 = mergeSortedArraySolution(pruebaUno2, 5, pruebaDos2, 5);
-			System.out.println("Arreglo mixto: "+Arrays.toString(resultadoPrueba2));*/
-
-
 
 		System.out.println("\nEjemplos de actividad uno con nuestro codigo\n");
 
