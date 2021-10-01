@@ -3,14 +3,13 @@ package fciencias.edatos.practica01;
 import java.util.Arrays;
 
 /**
-* Práctica 1 del curso de Estructuras de Datos.
+* Práctica Uno del curso de Estructuras de Datos.
 * @author Pintor Muñoz Pedro Joshue - 420053796
 * @author Ortiz Castañeda José Ramón - 318357115
-* @version 2.0 Septiembre 2021.
+* @version 2.0 01 de octubre de 2021
 * @since Laboratorio de Estructuras de Datos 2022-1.
 */
 public class Practica01{
-
 
 //EJERCICIO 1
 
@@ -54,7 +53,7 @@ public class Practica01{
 	* @param valueOne el límite de mezcla del primer arreglo
 	* @param arrayTwo el segundo arreglo a mezclar
 	* @param valueTwo el límite de mezcla del segundo arreglo.
-	* @return un arreglo ordenado de longitud m+n con la mezcla definida.
+	* @return un arreglo ordenado de longitud valueOne+valueTwo con la mezcla definida.
 	*/
 	public static int[] mergeSortedArraySolution(int[]arrayOne, int valueOne, int[]arrayTwo, int valueTwo){
 		int[] arrayTemp = new int[valueOne+valueTwo];
@@ -221,7 +220,7 @@ public class Practica01{
 		int[] arrayF1 = ArrayReader.readArray(directorio1 + "ArrayF1.txt");
 		int[] arrayF2 = ArrayReader.readArray(directorio1 + "ArrayF2.txt");
 
-		// Arreglos para el ejercicio tres
+		// Arreglos para el ejercicio tres (el método anterior los modfica)
 		int[] arrayA11 = ArrayReader.readArray(directorio1 + "ArrayA1.txt");
 		int[] arrayB11 = ArrayReader.readArray(directorio1 + "ArrayB1.txt");
 		int[] arrayC11 = ArrayReader.readArray(directorio1 + "ArrayC1.txt");
@@ -275,7 +274,7 @@ public class Practica01{
 			System.out.println("El arrayF1 y arrayF2 con el código de Emmanuel tardó: "+ (fin - inicio) + " milisegundos.");
 			//System.out.println("Resultado F: "+Arrays.toString(resultF));
 
-		System.out.println("\nEjemplos de actividad uno con nuestro codigo\n");
+		System.out.println("\nEjemplos de actividad uno con nuestro código\n");
 
 			inicio = System.currentTimeMillis();
 			int[] resultAPropio = mergeSortedArraySolution(arrayA1, 500, arrayA2, 700);
@@ -313,9 +312,6 @@ public class Practica01{
 			System.out.println("El arrayF1 y arrayF2 con nuestro código tardó: "+ (fin - inicio) + " milisegundos.");
 			//System.out.println("Resultado F: "+Arrays.toString(resultFPropio));
 
-			/* ------------------------------------------------------------- */
-
-
 		System.out.println("\nEjemplos de actividad dos con el código de Emmanuel\n");
 			inicio = System.currentTimeMillis();
 			boolean boardResultA = isValidBoard(boardA);
@@ -330,25 +326,25 @@ public class Practica01{
 			//System.out.println("El tablero B con el algoritmo de Emmanuel es válido: "+boardResultB);
 
 			inicio = System.currentTimeMillis();
-			//boolean boardResultC = isValidBoard(boardC);
+			boolean boardResultC = isValidBoard(boardC);
 			fin = System.currentTimeMillis();
 			System.out.println("El boardC con el código de Emmanuel: "+ (fin - inicio) + " milisegundos.");
 			//System.out.println("El tablero C con el algoritmo de Emmanuel es válido: "+boardResultC);
 
 			inicio = System.currentTimeMillis();
-			//boolean boardResultD = isValidBoard(boardD);
+			boolean boardResultD = isValidBoard(boardD);
 			fin = System.currentTimeMillis();
 			System.out.println("El boardD con el código de Emmanuel: "+ (fin - inicio) + " milisegundos.");
 			//System.out.println("El tablero D con el algoritmo de Emmanuel es válido: "+boardResultD);
 
 			inicio = System.currentTimeMillis();
-			//boolean boardResultE = isValidBoard(boardE);
+			boolean boardResultE = isValidBoard(boardE);
 			fin = System.currentTimeMillis();
 			System.out.println("El boardE con el código de Emmanuel: "+ (fin - inicio) + " milisegundos.");
 			//System.out.println("El tablero E con el algoritmo de Emmanuel es válido: "+boardResultD);
 
 			inicio = System.currentTimeMillis();
-			//boolean boardResultF = isValidBoard(boardF);
+			boolean boardResultF = isValidBoard(boardF);
 			fin = System.currentTimeMillis();
 			System.out.println("El boardF con el código de Emmanuel: "+ (fin - inicio) + " milisegundos.");
 			//System.out.println("El tablero F con el algoritmo de Emmanuel es válido: "+boardResultD);
@@ -460,7 +456,6 @@ public class Practica01{
 			fin = System.currentTimeMillis();
 			System.out.println("El arrayF1 con nuestro código: "+ (fin - inicio) + " milisegundos.");
 			//System.out.println("Arreglo F1 rotado 20000 veces: " + Arrays.toString(arrayF11));
-
 
 	}
 }
