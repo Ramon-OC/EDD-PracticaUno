@@ -13,24 +13,21 @@ En esta práctica 01 se nos dio a la tarea de mejorar la complejidad en tiempo d
 
 ## Instrucciones de compilación y ejecución
 
-Nuestro programa funciona con archivos .txt en los que se guardan los arreglos con los que funcionan todos los métodos, todos estos archivos están guardados en una carpeta llamada "Examples", dicha carpeta no viene junto con la practica por indicaciones del profesor.  
-Es importante antes de compilar y ejecutar el programa añadir manualmente esta carpeta en el siguiente directorio.  
+El programa funciona con la lectura de archivos .txt que contienen los arreglos con los que opera cada método, todos estos archivos están almacenados en un directorio «Test», dicha carpeta no está adjunta a la práctica por indicaciones del profesor. Es importante antes de compilar y ejecutar el programa añadir manualmente este directorio bajo el nombre «Test» en la siguiente ruta: 
 
  * src/fciencias/edatos/practica01
 
-Para la creación de esta práctica utilizamos ant, la forma de ejecutar el programa es el siguiente:
+Para la creación de esta práctica implementamos ant, la forma correcta de ejecutar el programa es escribiendo en consola los siguientes comandos: 
 
- * Escribir en consola: ant build	(Esto para crear un directorio donde se guardarán los archivos .class de la practica.)
- * Escribir en consola: ant jar	(Esto creará un archivo ejecutable para la práctica.)
- * Escribir en consola: ant run	(Es la forma de correr el archivo ejecutable que se creo anteriormente.)
+ * ant build    Crea un directorio donde se guardarán los archivos .class de la práctica.
+ * ant jar      Creará un archivo ejecutable .jar
+ * ant run      Corre el archivo ejecutable que se creó anteriormente.
  
- Para generar la documentación de la práctica:
- 
- * Escribir en consola: ant doc
+ Para generar la documentación de la práctica basta con usar el comando «ant doc».
 
 ----
 
 ## Trabajo en equipo de la práctica
 
-En esta práctica 01 mi compañero y yo, nos organizamos para estudiar juntos la funcionalidad de cada uno de los algoritmos propuestos, llegando a una posible solución de cada uno de ellos, posteriormente dividimos el trabajo para realizar por separado el mejoramiento de cada uno de ellos, asi como su implementación.  
-De acuerdo a el algoritmo en el que trabajamos, hicimos la descripción de como lo mejoramos en su tiempo de ejecución, anotandolo en el archivo Test.
+En esta práctica mi compañero y yo nos organizamos para estudiar el comportamiento de cada uno de los algoritmos originales planteando alternativas que mejoren su tiempo de ejecución, posteriormente dividimos el trabajo para la implementación de los tres ejercicios. Según el algoritmo en el que trabajamos, realizamos la descripción de cómo lo mejoramos en su tiempo de ejecución, anotándolo en el archivo «Test.pdf» disponible en el directorio principal.
+
